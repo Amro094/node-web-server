@@ -76,10 +76,10 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.get('/project', (req, res) => {
+app.get('/projects', (req, res) => {
     // res.send('<h3>About Page</h3>');
     // rendering static page 'about.hbs'
-    res.render('project.hbs', {
+    res.render('projects.hbs', {
         // data passed in to about.hbs
         pageTitle: 'Project Page',
         welcomeMessage: 'Welcome to Projct Page'
