@@ -28,11 +28,11 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     res.render('maintenance.hbs', {
        pageTitle: 'Maintenance Page'
     });
-});
+}); */
 
 // static directory
 app.use(express.static(__dirname + '/public'))
@@ -72,7 +72,17 @@ app.get('/about', (req, res) => {
     // rendering static page 'about.hbs'
     res.render('about.hbs', {
         // data passed in to about.hbs
-       pageTitle: 'About Page',  
+       pageTitle: 'About Page'
+    });
+});
+
+app.get('/project', (req, res) => {
+    // res.send('<h3>About Page</h3>');
+    // rendering static page 'about.hbs'
+    res.render('project.hbs', {
+        // data passed in to about.hbs
+        pageTitle: 'Project Page',
+        welcomeMessage: 'Welcome to Projct Page'
     });
 });
 
