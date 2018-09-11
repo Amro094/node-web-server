@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// heroku setup for the port, OR when we run app locally will run over port 3000
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 // registerPartial allows us to save the same code into files
@@ -79,6 +82,6 @@ app.get('/bad', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is listening from port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
